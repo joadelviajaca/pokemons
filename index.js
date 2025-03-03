@@ -9,7 +9,7 @@ const rawData = fs.readFileSync("pokemon.json");
 let pokemons = JSON.parse(rawData).pokemons;
 
 app.use(express.json());
-
+app.use(cors())
 // Obtener todos los Pokémon
 app.get("/pokemons", (req, res) => {
   res.json(pokemons);
